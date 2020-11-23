@@ -7,6 +7,7 @@ import VueApollo from 'vue-apollo';
 import PostList from "./components/post-list";
 import TopicPostList from "./components/topic-post-list";
 import UserPostList from "./components/user-post-list";
+import NotFound from "./components/not-found";
 import moment from "moment";
 
 window.Vue = Vue;
@@ -20,7 +21,7 @@ const routes = [
     { path: '/post/:id', component: Post, name: 'post' },
     { path: '/topics/:slug', component: TopicPostList, name: 'topic' },
     { path: '/users/:id', component: UserPostList, name: 'user' },
-    { path: '*', component: { template: '<div>Not found</div>'}, name: '404' }
+    { path: '*', component: NotFound, name: '404' }
 ];
 
 const apolloClient = new ApolloClient({
